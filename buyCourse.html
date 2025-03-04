@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="buyCourse.css">
+    <title>buyCourse</title>
+</head>
+<body>
+    <nav class="mainNavbar">
+        <div class="L-Navbar">
+           <input type="text" class="input-L-Navbar" value="Search">
+           <button type="button"> جست و جو</button>
+        </div>
+        <div class="R-Navbar">
+            <h1>nester</h1>         
+            <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+  </nav>  
+
+       <div class="container">
+        <div id="courses-list">
+            <div class="heading-add-shopp">
+             <h1>MEGAJS</h1> <!--  id="heading" class="heading" -->
+     
+             <div class="add-shopp">
+     
+                 <!-- <i class="fa-solid fa-bag-shopping"></i> -->
+     
+                <div class="main_show-course">
+                    <div class="show-course">
+                        <table id="cart-content">
+                        <thead>
+                            <tr>
+                                <th>تصویر</th>
+                                <th>اسم دوره</th>
+                                <th>قیمت</th>
+                            
+                              </tr>
+                        </thead>
+                         <tbody>
+        
+                           
+                         </tbody>
+                         </table>
+                           <!-- دکمه حذف سبد خرید  .clearcard -->
+                         <a href="#" class="btn-clearCart" >پاک کردن</a>
+                         
+                        
+                    </div> <!-- end class="show-course" -->
+                </div> <!-- end class="main_show-course" -->
+     
+                 <!-- <div id="show-course"></div> -->
+               </div>
+              
+            </div> <!-- heading-add-shopp -->
+     
+            <div class="row">
+               <div class="six columns">
+                  <div class="card">
+                     <a href="#">
+                         <img src="images/img-1.jpg" alt="">
+                     </a>
+                     <div class="info-card">
+                         <h4>دوره جاوااسکریپت</h4>
+                         <p>محمدرضا هاجی مقصودی</p>
+                         <img src="#" alt="">
+                         
+                         <div class="clip-star"></div>
+                         <div class="clip-star"></div>
+                         <div class="clip-star"></div>
+                         <div class="clip-star"></div>
+                         <div class="clip-star"></div>
+     
+                         <p class="price">190/000 <span>۹۵/۰۰۰</span><span>تومان</span></p>
+                         <a href="#" class="u-full-width button-primary 
+                         button input add-to-cart" data-id="1">افزودن به سبد خرید</a>
+                         <!-- id: course.querySelectorAll('a')[1].getAttribute('data-id') -->
+     
+                     </div>  <!-- info-card -->
+                  </div> <!-- card -->
+               </div>  <!-- six columns -->
+     
+               <div class="six columns">
+                <div class="card">
+                   <a href="#">
+                       <img src="images/img-1.jpg" alt="">  
+                   </a>
+                   <div class="info-card">
+                       <h4>دوره جاوااسکریپت</h4>
+                       <p>محمدرضا هاجی مقصودی</p>
+                       <img src="#" alt="">
+                       
+                       <div class="clip-star"></div>
+                       <div class="clip-star"></div>
+                       <div class="clip-star"></div>
+                       <div class="clip-star"></div>
+                       <div class="clip-star"></div>
+   
+                       <p class="price">190/000 <span>۹۵/۰۰۰</span><span>تومان</span></p>
+                       <a href="#" class="u-full-width button-primary 
+                       button input add-to-cart" data-id="2">افزودن به سبد خرید</a>
+                       <!-- id: course.querySelectorAll('a')[1].getAttribute('data-id') -->
+   
+                   </div>  <!-- info-card -->
+                </div> <!-- card -->
+             </div>  <!-- six columns -->
+     
+     
+                 <div class="six columns">
+                     <div class="card">
+                        <a href="#">
+                            <img src="images/img-1.jpg" alt="">
+                        </a>
+                        <div class="info-card">
+                            <h4>دوره React</h4>
+                            <p>محمدرضا هاجی مقصودی</p>
+                            <img src="#" alt="">
+                            
+                            <div class="clip-star"></div>
+                            <div class="clip-star"></div>
+                             <div class="clip-star"></div>
+                             <div class="clip-star"></div>
+                             <div class="clip-star"></div>
+                   
+                             <p class="price">190/000<span>۹۵/۰۰۰ </span><span>تومان</span></p>
+                             <a href="#" class="u-full-width button-primary 
+                             button input add-to-cart" data-id="3">افزودن به سبد خرید</a>
+                             <!-- id: course.querySelectorAll('a')[1].getAttribute('data-id') -->
+         
+                         </div>  <!-- info-card -->
+                         </div> <!-- card -->
+                     </div>  <!-- six columns -->
+     
+     
+            </div>  <!-- row -->
+          </div>    <!--  container    --> 
+       </div>
+
+
+     
+     <script>
+    //varaibles متغییر های گلوبال سراسری
+     const courses = document.querySelector('#courses-list')
+     const ufullwidth = document.querySelector('.u-full-width')
+
+     const shoppingCartContent = document.querySelector('#cart-content tbody')
+
+     const btnClearCart = document.querySelector('.btn-clearCart')
+     
+
+    // const addShopp = document.querySelector('.add-shopp')
+     const RNavbar = document.querySelector('.R-Navbar')
+     const showCourse = document.querySelector('.main_show-course') /* .show-course */
+
+
+     
+     //این فانکشن سبد خرید فعال میکنه
+     function mainShowCourse(){
+        RNavbar.addEventListener('click', () =>{
+        showCourse.classList.toggle('active-js') /* میره سی اس اس اضافه  میکنه */
+     })             
+     }
+
+
+        //eventListener
+        eventListeners()
+
+        //فانکش شروع کار برای سبد خرید
+        function eventListeners(){ 
+            mainShowCourse()
+            courses.addEventListener('click', buyCourse) /* اگر کلیک شده برو به این تابع بای کورس */
+        
+
+                     
+        //این فانکشن با کلیک کردن روی دکمه قرمز حذف کل تیبل بادی پاک میکنه
+         shoppingCartContent.addEventListener('click', removeCourse)
+
+       //remove all courses from cart
+       /* کلیر کارت به عنوان شنونده استفاده می کنم */
+         btnClearCart.addEventListener('click', clearCard) 
+
+        //اگر مرورگر بسته شد و دوباره باز شد اگر در لوکال استوریج مقدار رشته بود بیار داخل سبد خرید نشون بده
+        //show courses from storage when loaded
+        //زمانی که کل صفحه مرورر لود شد viewport
+         document.addEventListener('DOMContentLoaded', showCoursesLocalStorage)
+
+        } /* end function eventListeners */
+
+   // functions
+   // add the course to the cart
+    function buyCourse(e){
+       e.preventDefault() /* preventDefault()  برای جلو گیری از لود شدن دوباره ویو پرت */
+       // use delegation for access to the course that selected
+       //میگه ای نقطه تارگتش جایی که کلیک کردم کلاسی به نام اد تو کارت داره 
+          if(e.target.classList.contains('add-to-cart')){
+            // access to the card div with parentElement
+               const course = e.target.parentElement.parentElement
+               //read values
+               getCourseInfo(course)  
+               /* دکمه افزودن به سید خرید زده شد و کل المنت پدر و بابابزرگ میگیر */ 
+               /* مینداز داخل متغییر کورس بعد دادمش به تابع گت کورس اینفو */
+            }  
+            
+        }
+
+        //getting the course info that selected by user
+    function getCourseInfo(course){  /*  course == <div id="courses-list"> */
+        
+        const courseInfo = {
+            image: course.querySelector('img').src,
+            title: course.querySelector('h4').textContent,
+            price: course.querySelector('span').textContent,
+            id: course.querySelectorAll('a')[1].getAttribute('data-id')
+        }
+
+        //adding the course to the cart
+        addToCart(courseInfo)
+    }    
+
+    //adding the course to the cart
+    function  addToCart(cInfo){  /* فانکشن دار آبجکت کورس بر می گردونه */
+
+        //create <li> tag
+        let row = document.createElement('tr');
+
+        //Build HTML Template    template literals
+          row.innerHTML = `
+            
+                <td id= "td-img1">
+                    <img src = "${cInfo.image}">
+                <td/>
+                <td id= "td-title2">
+                   ${cInfo.title}
+                <td/>
+                <td id= "td-price3">
+                   ${cInfo.price}
+                <td/>
+                <td id="td-btn4"> 
+                    <a class = "remove" href = "#" data-id="${cInfo.id}"><img class = "img-remove" src="/buyCours/Icon remove.PNG" alt=""><a/>  
+                <td/>
+          
+          `;    
+    
+          shoppingCartContent.append(row)
+
+       /* اضافه کردن سبد خرید در لوکال استوریج local Storage */
+       saveToStorage(cInfo)
+
+    }
+    
+     // start localStorage
+
+    //ذخیره کردن در لوکال استوریج
+    //add to localstorage
+    function saveToStorage(course){
+       //get array of courses from storage
+       let courses = getFromStorage()   /* این فانکش صدا میزنه و مقدار برمی گردون */
+
+       // add the new course to the array of courses
+       //این آرایس سفیده 
+       courses.push(course)
+
+                           /* key رمز ارسال */
+       localStorage.setItem('courses', JSON.stringify(courses))
+       /* JSON.stringify  آرایه رو بگیر تبدیل کن به رشته بریز داخل لوکال استوریج مرورگر   */
+    }
+
+
+    //اول بیا چک کن ببین داخل لوکال استوریج موجود هست  
+    //بیا اون برای ما برگردون یا یک آرایه خالی برگردون  
+    //get content from storage
+    function getFromStorage(){
+           let courses; /* کورس اینجا آرایه هست */ 
+              //اول بیا چک کن ببین داخل لوکال استوریج موجود هست  
+              //if courses exist before
+           if(localStorage.getItem('courses')){
+     
+                           /* اگر سبد خرید در لوکال استوریج بود تبدیلش کن به آرایه  */
+               courses = JSON.parse(localStorage.getItem('courses')) 
+           }else{
+               courses = [] 
+           }
+
+        return courses    
+    }
+    // end localStorage  
+      
+
+    //remove course from  Dom   #cart-content tbody می خوام تو سبد خرید تیبل بادی پاک کنم
+    function removeCourse(e){
+
+        let course, courseId;
+
+        if(e.target.classList.contains('img-remove')){
+            e.target.parentElement.parentElement.parentElement.remove()
+            
+            course = e.target.parentElement.parentElement.parentElement
+            courseId = course.querySelector('.remove').getAttribute('data-id')
+        /*     console.log(course)
+            console.log(courseId) */
+            }
+           
+          //remove course from local Storage one by one
+          removeCourseLS(courseId)/* تابع اینجا فراخوانی شده براساس شماره آیدی تگ a */
+
+          }
+
+
+    function removeCourseLS(id){/* میگه به این فانکشن آیدی پاس بده تا تو حلقه کل لوکال استوریج نمایش بده */
+    
+       let courseLS = getFromStorage()
+       
+         /*  از فانکشن گت فرام استوریج اوردمش  course متغییر */
+         /* shift + alt + F12 */
+       courseLS.forEach(function(course, index) {
+        /* ایندکس داره آیدی هر  کالایی در سبد خرید نشان میده */
+        
+        if(course.id === id){
+            courseLS.splice(index, 1)
+            /* splice میاد تو آرایه از میجرخه تا ایندکس دلخواهم پاک کنه */
+        }
+       });  
+
+       /* آرایه که گرفتم بصورت رشته تبدیل کن بریز داخل لوکال استوریج */
+       localStorage.setItem('courses', JSON.stringify(courseLS))
+    }
+
+
+    //remove all courses from Dom   #cart-content tbody   می خواهم کل سبد خرید در تیبل بادی پاک کنم
+    function clearCard(e){
+        e.preventDefault()
+
+          /*  روش اول 
+          کل بدنه تیبل بادی پاک می کنه 
+           shoppingCartContent.innerHTML= '' */
+          
+         //   روش دوم  
+        //    روش دوم میاد دونه دونه پاک می کنه تا زمانی که فرزندی نداشته باشه
+        //  shoppingCartContent   #cart-content tbody
+        while(shoppingCartContent.firstChild){ // تا زمانی که فرزندی وجود دار شرط حلقه رو انجام بده
+            shoppingCartContent.firstChild.remove() 
+        }
+    
+        clearCartLS()  /* این فانکشن فراخوانی شده ایجا تا روی دکمه دیلیت زدی همه 
+        
+        روی سبد خرید پاک بش وهم از لوکال استوریج*/
+
+    } /* end function clearCard  */
+ 
+    //clear all courses from localstorage
+      function clearCartLS(){
+        localStorage.clear()
+      }
+      
+    
+      //show courses when document loaded and add courses into the cart basket
+      function showCoursesLocalStorage(){
+        let coursesLS = getFromStorage(); /* گت فرام استوریج تابعی که فراخوانی شده */
+         
+        //add courses into the cart
+        
+        coursesLS.forEach(function(data_){/* اینجا یک اسم دلخواه من دار از کورسس لوکال استورج میخونه */
+            
+        //create <li> tag
+        let row = document.createElement('tr');
+
+        //Build HTML Template    template literals
+          row.innerHTML = `
+        
+                 <td id= "td-img1">
+                    <img src = "${data_.image}">
+                <td/>
+                <td id= "td-title2">
+                   ${data_.title}
+                <td/>
+                <td id= "td-price3">
+                   ${data_.price}
+                <td/>
+                <td id="td-btn4"> 
+                    <a class = "remove" href = "#" data-id="${data_.id}"><img class = "img-remove" src="/buyCours/Icon remove.PNG" alt=""><a/>  
+                <td/>
+     
+          `;    
+           
+           shoppingCartContent.append(row)
+        });
+
+      }
+
+
+
+     </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contaier">
+        <div class="nav">
+             
+        </div>
+     
+    
+        <section>
+    
+        </section>
+        
+        <footer>
+    
+        </footer>
+       </div>
+
+
+<script>
+         // class
+         // call متد کال در پایین استفاده شده وقتی برای مشتری ویژه ارث بری نیاز
+         // prototype پروتوتایپ ها جاشون دادن به کلاس ها   
+//چرا از پروتوتایپ ها استفاده میکنیم ؟ بخاطراینکه برای ساخت متد های دیگر 
+//نیاز نباشد بگردیم  نام کانستراکتور چیست و کجاست  و بیرون از کانستراکتور تعریف بتوانیم بکنیم
+// و همچنین با پروتوتایپ ها می تونی به آرگمان های کانستراکتور دسترسی داشته باشیم و
+// ودسترسی بین متد ها  از طریق دیس
+
+
+
+  // Array, Object, Function = Reference Type  
+  //فقط مقدار داخلش ثبت نمیشه فقط آدرس مقدار ارسال میشه
+
+//OOP
+//Dynamic Code   روش  پویا
+         
+        //  تحلیل سوال پروژه ساخت مشتریان بانک  نام و مقدار حساب بانکی  و  سطح دسترسی مشتریان از طریق ساخت کانستراکتور
+        //  دسترسی به اسم و مقدار حساب مشتری از طریق فانکشن و دیس و  متد
+
+        // تحلیل چرا از کانستراکتور استفاده می کنیم 
+        // برای اینکه مشتری های بیشتری دسترسی و هر نیاییم صد تا ابجکت مجزا برای هر مشری بنویسیم 
+
+        // و هر بار برای هر مشتری یک آبجکت جدید نسازیم
+
+//Object Constructor   //Template Literals ``
+// اسم کانستراکتور حرف اول بزرگ بنویسید
+
+
+// Client اینجا  کانستراکتور هست 
+// نام مشتری و مقدار حساب به شکل پارامتر داخل فانکشن میزاریم
+//از طریق کانستراکتور آبجکت یا شی میسازیم و می توانیم آبجکت ها یا مشتری های بیشتری بسازیم
+
+
+
+//Object Constructor
+
+   class Client{
+         constructor(name, balance){
+            this.balance = balance,
+            this.name = name
+         }
+
+
+
+         // this.membership = function(){   
+   // روش قبلی از دیس استفاده می کردیم    
+// }
+
+// مزیت پروتوتایپ ها بخاطر نوشتن متدها بیرون از کانستراکتو
+// برای پیاده سازی سطح دسترسی از متد ممبرشیپ استفاده می کنیم
+// about membership of client
+ membership(){  /* یکبار اسم کانستراکتور می نویسیم و بعد نقطه پروتوتایپ نقطه و بعد متد تعریف می کنیم */
+     let name;
+         if(this.balance > 1000000){
+            name = 'special(ویژه)' /* مشتری ویژه که با کانستراکتور بیزینس درست کردم */
+       }else if(this.balance > 1000){ /* اگر موجودی حساب بیشتر از هزار پوند بود  */
+           name = 'gold'   /*  مشتری  طلایی */
+       }else if(this.balance > 500){
+           name = 'silver'
+       }else{
+         name = 'normal'
+       }
+         var var_ = 'a';
+    
+       return 'هست ' + name  + ' سطح دسترسی مشتری ' + ' ' + true  + ' ' +  var_;
+  }
+
+   
+// متد گرفتن نام و مقدار حساب موجودی و نشان دادن سطح دسترسی
+// و رفتن از متد گت کلاینت اینفو به متد ممبرشیپ برای نشان دادن سطح دسترسی
+//get some information about client constractor
+getClientInfo(){ /* در این متد از تمپلت لیترال استفاده کردم ‍‍‍‍‍‍‍‍‍‍‍`` */
+
+    return `name: ${this.name}, balance: ${this.balance},
+     access level: ${this.membership()}`
+}
+
+
+//متد برداشت پول
+//get some information about client
+withdrawal(amount){
+
+   return  this.balance -= amount  /* بعد از برداشت از حساب از مقدار اصلی کم کن   */
+}
+
+
+// متد شارژ کردن یا واریز به حساب#
+//get some information about client
+deposite(amount){ /* مثلا صد پوند شارژ کن */
+
+ return this.balance += amount  /* و در اینجا بلس اگر مشتری بهروز بود میشه دو هزار صد پوند */
+}
+   
+}/* end Constructor */
+
+
+
+
+// اومدم ازکانستراکتور آبجکت جدید ساختم
+let person1 = new Client('Behrooz_', '2000') // مشتری بهروز بفرس به فانکشن کانستراکتور
+let person2 = new Client('Babak', '200')      // مشتری بابک بفرس به فانکشن کانستراکتور
+
+
+
+console.log(person1)
+console.log(person1.membership())   //با این روش سطح دسترسی مشتری مشخص می کنیم میره داخل متد ممبرشیپ
+console.log(person2.membership())    //با این روش سطح دسترسی مشتری مشخص می کنیم میره داخل متد ممبرشیپ
+
+
+person1.withdrawal(200) // حال به متد برداشت حساب مقدار ۲۰۰ تا برداشت شد 
+
+person1.deposite(500)  // حالا به متد شارژ حساب پانصد پوند واریز کردم
+
+
+console.log(person1.getClientInfo())
+
+
+//======آموزش چطور مشتری ویژه پیاده سازی کنیم ؟ از روش ارث بری کلاس ها============
+//  کانستراکتور کلاس ها
+//این روش خیل احمقانه هست باید از روش ارث بری پیاده سازی کنیم ودسترسی به کانستراکتور اصلی  یعنی کلاینت داشته باشیم 
+
+   // آموزش چطور سطح دسترسی مشتری ویژه پیاده سازی کنیم ؟ 
+
+   //کانستراکتور بیزینس به کانستراکتور کلاینت ارث بری کن
+class Bussiness extends Client{
+    constructor(name, balance, phone, category){
+        //متد سوپر میره سراغ کانستراکتور کلاینت چون
+        // بیزینس توسعه یا ارث بری شده از کلایت
+        super(name, balance),
+        this.phone = phone,
+        this.category = category
+           
+       } 
+       
+       // متد گرفتن نام و مقدار حساب موجودی و نشان دادن سطح دسترسی
+      // و رفتن از متد گت کلاینت اینفو به متد ممبرشیپ برای نشان دادن سطح دسترسی
+
+      //get some information about client constractor
+      getClientInfo(){  /* در این متد از تمپلت لیترال استفاده کردم ‍‍‍‍‍‍‍‍‍‍‍`` */
+        
+       //الویت با همون متدی که در همین کلاس تعریف شده
+       //واگر اسم های متد مشابه وجود داشت در فایل اوررایت میکنه
+          return `name: ${this.name}, balance: ${this.balance},
+            access level: ${this.membership()}, phone: ${this.phone}`
+      }
+
+} 
+
+
+// ساخت یک نمونه از کانستراکتور و پاس دادن مقدار پارامتر ها به کانستراکتور بیزینس یعنی متد مشتری ویژه
+const personSpecial = new Bussiness('Reza', 2000000, '0790110145', 'Developer')
+
+console.log(personSpecial)
+console.log(personSpecial.getClientInfo()) //اینجا میگم برو مشتری ویژه رو برام نشون بده
+
+console.log(person2.getClientInfo()) //حالا مشتری بابک اطلاعاتش میار
+
+
+
+</script>
+</body>
+</html>

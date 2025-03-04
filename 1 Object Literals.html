@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="contaier">
+      <div class="nav"></div>
+
+      <section></section>
+
+      <footer></footer>
+    </div>
+
+    <script>
+      //OOP
+      // Hard Code  روش هارد کد
+
+      //  تحلیل سوال پروژه ساخت مشتریان بانک و مقدار حساب بانکی  و سطح دسترسی مشتریان از طریق ساخت آبجکت
+      // و دسترسی به اسم و مقدار حساب مشتری از طریق متد
+
+      // اشکال این روش برای هر مشتری باید
+      // یک آبجکت درست کنید که خیلی طاقت فرسا میشه تولید پروژه
+
+      //Object literals   //Template Literals ``
+      let client = {
+        name: "Behrouz",
+        balance: "1000",
+
+        //method  دو روش ساخت
+        // membership(){
+
+        // }
+        membership: function () {
+          /*  متد اسمی که من تعریف کردم  */
+          let name;
+          if (this.balance > 1000) {
+            /* اگر موجودی حساب بیشتر از هزار پوند بود  */
+            name = "gold"; /*  سطح دسترسی مشتری طلایی*/
+          } else if (this.balance > 500) {
+            name = "silver"; /* سطح دسترسی مشتری نقره ای */
+          } else {
+            name = "normal"; /* سطح دسترسی مشتری عادی */
+          }
+          return name; /* فانکشن بر می گردونه مقدار خروجی */
+        },
+      };
+
+      console.log(client);
+      console.log(client.balance);
+      console.log(client.name);
+      console.log(client.membership());
+    </script>
+  </body>
+</html>

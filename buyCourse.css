@@ -1,0 +1,376 @@
+/* CSS Base*/
+*{
+    padding: 0;
+    margin: 0;
+    outline: none !important;
+    list-style: none !important;
+    text-decoration: none !important;
+    box-sizing: border-box; 
+}
+
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+ 
+a {
+	color: #ccc;
+	/* -webkit-transition: all .3s ease-in-out;
+			transition: all .3s ease-in-out; */
+} 
+/* a:hover,
+a:focus {
+	color: rgb(46, 12, 201) !important;
+} */
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/eot/IRANSansWeb_Bold.eot');
+    src: url('../fonts/eot/IRANSansWeb_Bold.eot?#iefix') format('embedded-opentype'), /* IE6-8 */ url('../fonts/woff2/IRANSansWeb_Bold.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/ url('../fonts/woff/IRANSansWeb_Bold.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../fonts/ttf/IRANSansWeb_Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/eot/IRANSansWeb.eot');
+    src: url('../fonts/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'), /* IE6-8 */ url('../fonts/woff2/IRANSansWeb.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/ url('../fonts/woff/IRANSansWeb.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../fonts/ttf/IRANSansWeb.ttf') format('truetype');
+}
+body{
+    background:  #00334b url(images/bitmsap.png);
+    background-repeat: no-repeat;
+    font-family: IRANSans;
+}
+.mainNavbar{
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(45, 184, 184);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 50px;
+}
+.mainNavbar .L-Navbar{
+    width: 400px;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+.mainNavbar .L-Navbar .input-L-Navbar{
+    position: relative;
+    width: 500px;   
+    height: 45px; 
+    font-size: 15px;
+    color: #ccc;
+    background-color: #2DB8B8;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.mainNavbar .L-Navbar button{
+    width: 200px;
+    height: 45px;
+    background-color: #239999;
+    border: 1px solid #ccc;
+    color: #732d2d;
+    font-family: IRANSans;
+    font-size: 15px;
+    font-weight: 800;
+    pointer-events: none;
+   
+}
+.mainNavbar .L-Navbar button:hover{cursor: none;}
+.mainNavbar .R-Navbar{
+    width: 400px;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 200px; 
+    gap: 20px;
+}
+.mainNavbar .R-Navbar h1{
+    font-size: 40px !important;
+    color: #ccc;
+    font-weight: 700;
+}
+.mainNavbar .R-Navbar i{
+    font-size: 35px !important;
+    color: rgb(58 2 2 / 71%);
+    line-height: 50px;
+    z-index: 1000;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    background-color: #2DB8B8;
+}
+
+/* شروع*/ /*  انتخاب کردن دوره آموزشی و نمایش دادن در سبد خرید  */
+.heading-add-shopp{
+    display: flex;
+    padding: 30px;
+    width: 1200px;
+    /* margin-top: 200px; */
+    background-color: #197b5a;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+/* .add-shopp i */
+.heading-add-shopp h1{ 
+    margin-left: 800px;
+}
+.main_show-course{
+    width: 100%;
+    min-height: 242px;
+    position: absolute;
+    background-color: #2DB8B8;
+    right: 0px;
+    top: 68px;
+
+    z-index: 1000;
+    visibility: hidden;
+} 
+.show-course{
+    width: 400px;
+    min-height: 250px;
+    height: auto;
+    position: absolute;
+    right: 75px;
+    top: 0px;
+    background-color: #4dc7c057;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 200;
+
+}
+/* این کد سبد خرید با جاوا اسکریپت فعال میکنه */
+.active-js{
+    visibility: visible;
+}
+/* پایان */
+
+table tr{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 300;
+    padding-top: 20px;
+    transform: translateX(50px);
+}
+table thead tr th {
+    padding-left: 65px;
+}
+table thead tr th:nth-child(2){
+
+    transform: translateX(-45px);
+
+}
+table thead tr th:nth-child(3){
+    transform: translateX(-50px);
+}
+table thead::after{
+    content: '';
+    position: absolute;
+    top: 55px;
+    width: 100%;
+    height: 4px;
+    background-color: #2DB8B8;
+
+}
+table tbody tr td{
+    margin-top: 20px
+}
+table tbody tr #td-img1 img{
+    width: 120px;
+    transform: translateX(45px);
+    border: 1px solid #2DB8B8;
+    border-radius: 5px;
+    
+}
+table tbody tr #td-title2{    
+    font-size: 14px;
+    font-weight: 800;
+    transform: translateY(19px);
+    width: 70px;
+    text-align: right;
+    margin-top: 45px;
+    transform: translateX(20px);
+}
+table tbody tr #td-price3{
+    font-size: 14px;
+    font-weight: 800;
+    transform: translateX(-40px);
+    padding-top: 16px;
+    width: 70px;
+    text-align: right;
+    margin-top: 27px;
+}
+table tbody tr::after{
+content: '';
+position: absolute;
+width: 390px;
+top: 15px;
+left: -44px;
+border-bottom: 2px solid #2DB8B8;
+
+}
+.show-course .img-remove{
+     position: absolute;
+     width: 30px;
+     height: 30px;
+     border-radius: 50%;
+     transform: translateX(-70px);
+     margin-top: 22px; 
+   
+}
+
+
+.show-course .remove:hover::after{
+    content: 'حذف';
+    position: absolute;
+    top: 54px;
+    left: 4px;
+    width: 100px;
+    height: 40px;
+    background-color: #3e9d9b;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.show-course .btn-clearCart{
+    width: 380px;
+    height: 40px;
+    color: #000;
+    font-weight: 800;
+    letter-spacing: 1px;
+    background-color: #239999;
+    border:1px solid #ccc;
+    border-radius: 4px;
+    line-height: 40px;
+    display: block;
+    margin-left: 9px;
+    margin-top: 40px !important;
+    margin-bottom: 30px;
+    text-align: center;
+}
+/* .show-course .button-delete:hover{
+    border:1px solid #887d7d;
+   
+} */
+
+
+/* پایان */
+.row{
+    column-gap: 16px;
+    height: 700px;
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.card{
+    border: 1px solid #ccc;
+    width: 350px;
+    height: 500px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    overflow: hidden;
+}
+
+.card a img{
+    width: 350px;
+    height: 250px;
+}
+.card img::before{
+    content: '.';
+    position: absolute;
+ /*    top: 140px;
+    left: 290px; */
+    top: 22px;
+    left: 1px;
+
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(45, 184, 184);
+    color: rgb(212, 122, 3);
+}
+.card img::after{
+    content: '.';
+    position: absolute;
+    top: 140px;
+    left: -90px;
+    transform: rotate(90deg);
+    width: 200px;
+    height: 5px;
+    background-color: rgb(45, 184, 184);
+    color: lime;
+}
+.info-card{
+    width: 350px;
+    height: 200px;
+    text-align: right;
+    padding-right: 20px;
+}
+.info-card h4{
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}   
+.info-card p{
+    padding-top: 10px;
+    font-size: 18px;
+}
+.info-card p:nth-child(2){
+    background-color: rgb(53 193 207);
+}
+.clip-star {
+    background: rgb(165, 147, 30);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin-top: 10px;
+ }
+.info-card .price{
+    font-weight: 600;
+    display: flex; 
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    
+   
+ 
+}
+.info-card .price span:nth-child(1){
+    transform: translateX(-50px);
+    text-decoration: underline !important;
+    text-underline-offset: -3px;
+}
+
+.u-full-width{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 39px;
+    text-align: center;
+    color: #ccc;
+    background-color: rgba(23, 141, 196, 0.973);
+    height: 35px;
+    width: 300px;
+    display: block;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="contaier">
+      <div class="nav"></div>
+
+      <section></section>
+
+      <footer></footer>
+    </div>
+
+    <script>
+      // Array, Object, Function = Reference Type
+      //فقط مقدار داخلش ثبت نمیشه فقط آدرس مقدار ارسال میشه
+
+      //OOP
+      //Dynamic Code   روش  پویا
+
+      //  تحلیل سوال پروژه ساخت مشتریان بانک و مقدار حساب بانکی  , سطح دسترسی مشتریان از طریق ساخت کانستراکتور
+      //  دسترسی به اسم و مقدار حساب مشتری از طریق فانکشن و دیس و  متد
+
+      // تحلیل چرا از کانستراکتور استفاده می کنیم
+      // برای اینکه از طریق کانستراکتور بتوانیم نمونه های بیشتری بسازیم و معنی بازاریش مشتری های بیشتری دسترسی داشته باشیم
+
+      // و هر بار برای هر مشتری یک آبجکت جدید نسازیم
+
+      //Object Constructor   //Template Literals ``
+      // اسم کانستراکتور حرف اول بزرگ بنویسید
+
+      // Client اینجا  کانستراکتور هست
+      // نام مشتری و مقدار حساب به شکل پارامتر داخل فانکشن میزاریم
+      //از طریق آبجکت کانستراکتور می توانیم آبجکت ها یا مشتری های بیشتری بسازیم
+      let Client = function (name, balance) {
+        // در کانستراکتور بخاطر وجود فانکشن باید از دیس استفاده کنید
+        this.name = name;
+        (this.balance = balance),
+          //این متد سطح دسترسی مشخص می کنه
+          (this.membership = function () {
+            let name;
+            if (this.balance > 1000) {
+              /* اگر موجودی حساب بیشتر از هزار پوند بود  */
+              name = "gold"; /*  مشتری  طلایی */
+            } else if (this.balance > 500) {
+              name = "silver";
+            } else {
+              name = "normal";
+            }
+            var var_ = "a";
+
+            return (
+              "هست " + name + " سطح دسترسی مشتری " + " " + true + " " + var_
+            );
+          });
+      };
+      //آبجکت جدید تعریف می کنم یعنی مشتری جدید تعریف می کنم
+      let person1 = new Client("Behrouz_", 2000); // مشتری بهروز بفرس به فانکشن کانستراکتور
+      let person2 = new Client("Ba‌‌bak", 200); // مشتری بابک بفرس به فانکشن کانستراکتور
+
+      console.log(person1);
+      console.log(person1.membership()); //با این روش سطح دسترسی مشتری مشخص می کنیم میره داخل متد ممبرشیپ
+      console.log(person2.membership()); //با این روش سطح دسترسی مشتری مشخص می کنیم میره داخل متد ممبرشیپ
+
+      //خروجی در کونسل مرورگر
+
+      // Client {name: 'Behrouz_', balance: 2000, membership: ƒ}
+
+      // gold موفق باشید true a
+      //  normal موفق باشید true a
+
+      //=======================================New Example========================================
+
+      // string کار با رشته ها
+
+      const string1 = "Behrouz"; // Type string
+      //ساخت کانستراکتور با شروع حرف بزرگ
+      const string2 = new String("Behrouz"); //Type Object
+
+      console.log(string1);
+      console.log(string2);
+
+      console.log(string1 == string2); /* True */ // دو تا مساوی میاد مقدار بررسی میکنه و  ترو نشان می دهد
+      console.log(string1 === string2); /* False */ //اما سه تا مساوی مقدار و نوع داده رو هم بررسی میکنه
+
+      // number
+
+      const number1 = 21;
+      const number2 = new Number(21);
+
+      console.log(number1); // این از نوع  شماره هست
+      console.log(number2); // امااین از نوع آبجکت هست
+
+      // Array  = reference Type
+
+      const array1 = [1, 2, 3, 4, 5]; // این از نوع آرایه هست
+      const array2 = new Array(1, 2, 3, 4, 5); // اما این از نوع آبجکت یا کانستراکتور است
+
+      console.log(array1);
+      console.log(array2);
+
+      console.log(array1 == array2); //False  //   چه دوتا مساوی بزاری برابر نیستند
+      console.log(array1 === array2); //False // چه سه تا مساوی بزاری برابر نیستند
+      // چون Reference Type ها فقط آدرس هش شده ذخیره میشه
+
+      // Function  = reference Type
+
+      // چه فانکشن ساده تعریف کنی  Function expression
+      const function1 = function (a, b) {
+        return a + b;
+      };
+      // چه فانکشن از نوع کانستراکتور آبجکت بساز تعریف کنی خروجی یکسان
+      const function2 = new Function(
+        "a",
+        "b",
+        "return a + b"
+      ); /* مقداردهی می کنم به فانکشن */
+
+      console.log(function1(4, 10));
+      console.log(function2(4, 10));
+
+      console.log(function1);
+      console.log(function2);
+
+      console.log(function1 == function2); // False
+      console.log(function1 === function2); // False
+      // چون Reference Type ها فقط آدرس هش شده ذخیره میشه
+
+      // You can still encapsulate  روش کپسوله سازی
+      let add = (x, y) => {
+        return x + y;
+      };
+      console.log(add(4, 5) + "  " + ": خروجی");
+
+      // Fat function or implicit  Arrow Function
+      var timesTwo = (params) => params * 2;
+
+      timesTwo(4); // 8
+
+      console.log([timesTwo]);
+
+      console.log(timesTwo(4));
+
+      // ES5
+      /* var obj = {
+  id: 42,
+  counter: function counter() {
+    setTimeout(function() {
+      console.log(this.id);
+    }.bind(this), 1000);
+  }
+}; */
+
+      // ES6
+      /* var obj = {
+  id: 42,
+  counter: function counter() {
+    setTimeout(() => {
+      console.log(this.id);
+    }, 1000);
+  }
+}; */
+    </script>
+  </body>
+</html>
